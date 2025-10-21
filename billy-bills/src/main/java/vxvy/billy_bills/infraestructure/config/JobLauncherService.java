@@ -1,4 +1,4 @@
-package vxvy.billy_bills.infraestructure.adapters.batch;
+package vxvy.billy_bills.infraestructure.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
