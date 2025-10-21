@@ -1,0 +1,33 @@
+services:
+  db:
+    # Use the official Postgres image, you can specify a version like 'postgres:16'
+    image: postgres:16
+    container_name: bills_db
+    restart: always
+    
+    # Map the container's PostgreSQL port (5432) to your Mac's port (5432)
+    ports:
+      - "5432:5432"
+      
+    # Required environment variables for the database
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: bills**25Y
+      POSTGRES_DB: bills
+      # This sets the data directory location inside the container for the volume mount
+      PGDATA: /var/lib/postgresql/data
+      
+    # Mount the named volume to the data directory for persistence
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # Add this line to run your setup script once on first run
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      # Use the built-in PostgreSQL command to check status
+      test: ["CMD-SHELL", "pg_isready -U root"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+# Define the named volume
+volumes:
+  postgres_data:
