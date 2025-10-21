@@ -10,3 +10,14 @@ Launch compose file before running Java. Use: docker compose up -d
 Then, from IDE/terminal, First launch:
 mvn clean install
 If maven is not installed in your system you will have to get it. I used brew through command: brew install maven
+
+***
+
+Current job execution state:
+
+  1. Spring Boot starts up
+  2. BillingJobConfiguration creates the job and step beans
+  3. JobLauncherService (our CommandLineRunner) automatically launches the job after startup
+  4. The job executes the billingStep tasklet
+  5. It prints "processing billing information"
+  6. Job completes successfully and shuts down
