@@ -5,7 +5,11 @@ A personal project oriented to manage bills
 
 You will need: docker-compose and maven installed.
 
-Launch compose file before running Java. Use: docker compose up -d
+Launch compose file before running Java. 
+Use: docker compose up -d
+Create database user (done in init.sql) and role:
+docker exec -it bills_db psql -U root -d bills -c "CREATE ROLE bills WITH LOGIN PASSWORD 'asdfasdf';"
+
 
 Then, from IDE/terminal, First launch:
 mvn clean install
