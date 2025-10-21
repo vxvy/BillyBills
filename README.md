@@ -1,5 +1,5 @@
 # BillyBills
-A personal project oriented to manage bills
+A personal project oriented to manage bills. By now it only launches Jobs that ping the postges' database
 
 ***
 
