@@ -13,10 +13,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class BillingJobConfiguration {
 
-    public BillingJobConfiguration() {
-        System.out.println("BillingJobConfiguration created!");
-    }
-
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
 
@@ -24,6 +20,7 @@ public class BillingJobConfiguration {
             JobRepository jobRepository,
             PlatformTransactionManager transactionManager
     ) {
+        System.out.println("BillingJobConfiguration created!");
         this.jobRepository = jobRepository;
         this.transactionManager = transactionManager;
     }
