@@ -1,4 +1,4 @@
-package vxvy.billy_bills;
+    package vxvy.billy_bills;
 
 import org.springframework.context.annotation.Configuration;
 
