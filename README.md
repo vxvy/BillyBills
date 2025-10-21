@@ -25,3 +25,9 @@ Current job execution state:
   4. The job executes the billingStep tasklet
   5. It prints "processing billing information"
   6. Job completes successfully and shuts down
+
+***
+
+Execute docker exec -it bills_db psql -U root -d bills -c 'select * from BATCH_JOB_EXECUTION;' 
+The output should look like:
+<img width="1025" height="202" alt="Screenshot 2025-10-22 at 00 44 20" src="https://github.com/user-attachments/assets/023ef06d-faf6-4119-af4b-1989689c5f5a" />
